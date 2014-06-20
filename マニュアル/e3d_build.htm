@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META name="GENERATOR" content="IBM WebSphere Studio Homepage Builder Version 11.0.0.0 for Windows">
+<META http-equiv="Content-Style-Type" content="text/css">
+<TITLE></TITLE>
+</HEAD>
+<BODY>
+<P><FONT size="+2">サンプルのビルドの仕方</FONT></P>
+<P>VC++2008 サービスパック１とDirectX SDK <S>December2004</S> <FONT size="+1"><B>August 2009</B></FONT>が必要です。<BR>
+<BR>
+DirectX のSDKは以下のURLからDLします。<BR>
+<S>http://www.microsoft.com/downloads/Browse.aspx?displaylang=en&amp;categoryid=2<BR>
+何回かnextを押してDecember2004を探してください。<BR>
+</S><BR>
+http://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;FamilyID=b66e14b8-8505-4b17-bf80-edb2df5abad4<BR>
+<B><FONT size="+2"><BR>
+(ver5.3.0.0からSDKのバージョンがDecember2004からAugust 2009になりました。)</FONT><FONT size="+1"><BR>
+</FONT></B><BR>
+<BR>
+<BR>
+DirectXをインストールする前に、最低一回はVC++を起動しておいてください。<BR>
+DirectXのインストールはexeをダブルクリックすると始まりますのであとは画面の指示に従ってください。<BR>
+<BR>
+<BR>
+サンプルはe3dsamplesフォルダの中に数個入っています。<BR>
+slnがソリューションファイルです。<BR>
+<BR>
+<FONT color="#ff0000">dllフォルダの中のeasy3d.dllをソリューションのローカルフォルダにコピーしてください。</FONT><BR>
+<BR>
+<FONT color="#ff0000"><U>E3D_EXTフォルダを中身ごとソリューションのローカルフォルダにコピーしてください。</U></FONT><BR>
+<BR>
+<BR>
+まずVC++の設定が必要です。<BR>
+立ち上げたら「ツール」--&gt;「オプション」の順番に選択します。<BR>
+そして「VC++ディレクトリ」の設定をします。<BR>
+<BR>
+図はインクルードファイルの場所とライブラリファイルの場所を設定した画面です。<BR>
+<IMG src="jpegfiles/e3d_vcdir_include.jpg" width="760" height="518" border="0"><BR>
+<BR>
+<IMG src="jpegfiles/e3d_vcdir_lib.jpg" width="754" height="513" border="0"><BR>
+<BR>
+<BR>
+それぞれDirectXとEasy3Dの項目を追加します。DirectXの設定は矢印ボタンで一番上にくるようにします。<BR>
+<BR>
+これが出来たらサンプルのslnファイルを開いてビルド（ALT＋B２回）し、実行（F5キー）できます。<BR>
+<BR>
+<BR>
+新しくプロジェクトを作成する際にはWin32プロジェクトを選んでください。<BR>
+ソリューションエクスプローラでソリューション名を右クリックし「プロパティ」を選択します。<BR>
+<IMG src="jpegfiles/e3d_multibytes.jpg" width="844" height="555" border="0"><BR>
+<BR>
+ここでマルチバイト文字セットを使用するを選んでください。<BR>
+<BR>
+<BR>
+そして「リンカ」の「入力」の「追加の依存ファイル」のところに<BR>
+ddraw.lib d3dx9.lib d3d9.lib dsound.lib winmm.lib d3dxof.lib dxguid.lib dxerr9.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib comctl32.lib vfw32.lib easy3d.lib<BR>
+を入れてください。<BR>
+<BR>
+そして特定のライブラリの無視のところにlibci.libを入れてください。<BR>
+<BR>
+<IMG src="jpegfiles/e3d_libname.jpg" width="845" height="556" border="0"><BR>
+<BR>
+<BR>
+VC++のディレクトリにeasy3dのフォルダを追加するのが嫌な場合は<BR>
+easy3d.hとusercoef.hとeasy3d.libとeasy3d.dllをローカルフォルダにコピーし、<BR>
+include &lt;easy3d.h&gt;を include &quot;easy3d.h&quot;に、inlucde &lt;usercoef.h&gt;を
+include &quot;usercoef.h&quot;に書き換え、<BR>
+サンプルプログラムの前の方に<BR>
+#pragma comment( lib, &quot;easy3d.lib&quot; ) <BR>
+と足すことでも実行環境が作れると思います。<BR>
+<BR>
+<BR>
+<BR>
+ソフトの開発をする際は通常「Debug」設定で始めて、バグがなくなったら「Release」に切り替えます。<BR>
+<IMG src="jpegfiles/e3d_releasebuild.jpg" width="711" height="523" border="0"><BR>
+<BR>
+VC++の「ビルド」---&gt; 「構成マネージャ」を選択すると切り替えられます。<BR>
+<BR>
+E3D関数の呼び出しにはすべてサンプルのようにretの返り値をチェックし呼び出しが成功しているかチェックしてください。<BR>
+_ASSERT(0)呼び出しは「Debug」時にその場所でプログラムが止まるようになり、どこでバグが出ているかが瞬時に分かるようになります。<BR>
+<BR>
+</P>
+<P><A href="easy3d.htm">Easy3Dのページに戻る</A><BR>
+<BR>
+<A href="index.htm">トップページに戻る</A></P>
+</BODY>
+</HTML>

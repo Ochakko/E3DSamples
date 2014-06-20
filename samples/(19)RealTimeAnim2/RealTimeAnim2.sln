@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RealTimeAnim2", "RealTimeAnim2.vcproj", "{CF1B06FE-7F78-4F25-992B-0E8BBB263B15}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF1B06FE-7F78-4F25-992B-0E8BBB263B15}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CF1B06FE-7F78-4F25-992B-0E8BBB263B15}.Debug|Win32.Build.0 = Debug|Win32
+		{CF1B06FE-7F78-4F25-992B-0E8BBB263B15}.Release|Win32.ActiveCfg = Release|Win32
+		{CF1B06FE-7F78-4F25-992B-0E8BBB263B15}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
